@@ -1,33 +1,103 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textProductName"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textProductDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/textProductPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textColor="@android:color/holo_red_light" />
+        <ImageView
+            android:id="@+id/imageProduct"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sample_image" />
 
-    <Button
-        android:id="@+id/buttonAddToCart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ajouter au panier" />
-</LinearLayout>
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/textProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tomato"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp" />
+
+        <!-- About Section -->
+        <TextView
+            android:id="@+id/textAboutLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About:"
+            android:textStyle="bold"
+            android:paddingTop="8dp" />
+
+        <TextView
+            android:id="@+id/textProductDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fruit juteux et savoureux, riche en vitamines A, C et K, parfait pour les salades, sauces et plats cuisinés ... Voir plus"
+            android:textSize="14sp"
+            android:paddingBottom="8dp" />
+
+        <!-- Quantity Section -->
+        <TextView
+            android:id="@+id/textQuantityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantité: (Poid Minmale 0.5 Kg)"
+            android:textStyle="bold"
+            android:paddingTop="8dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="4dp">
+
+            <Button
+                android:id="@+id/buttonDecreaseQuantity"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/textQuantityValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:text="1 Kg"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/buttonIncreaseQuantity"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="+" />
+        </LinearLayout>
+
+        <!-- Product Price -->
+        <TextView
+            android:id="@+id/textProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 MAD"
+            android:textSize="20sp"
+            android:textColor="@android:color/holo_green_dark"
+            android:paddingTop="8dp" />
+
+        <!-- Add to Cart Button -->
+        <Button
+            android:id="@+id/buttonAddToCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add to cart"
+            android:backgroundTint="#004d00"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>
